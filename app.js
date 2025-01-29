@@ -2,8 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 require("dotenv").config();
-const connectDB = require("./config/db");
-connectDB();
+
 const app = express();
 const v1 = require("./routes/v1");
 const {
@@ -13,6 +12,7 @@ const {
   morganLogger,
   validateSocket,
 } = require("./middleware");
+const sequelize = require("./config/db");
 
 app.use("/", express.static("public"));
 
@@ -36,4 +36,13 @@ app.use("/v1", v1);
 app.use((err, req, res, next) => {
   handleError(err, res);
 });
+
+sequelize
+  .sync()
+  .then(() => {
+    console.log("Database connected");
+  })
+  .catch((err) => {
+    throw err;
+  });
 module.exports = app;

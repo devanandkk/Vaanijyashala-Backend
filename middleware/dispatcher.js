@@ -1,6 +1,6 @@
 const { ErrorHandler } = require("../helper/error-handler");
 const { OK, UNAUTHORIZED } = require("../helper/status-codes");
-const { users } = require("../models");
+
 // const { matchPermission } = require("../utils/match-permission");
 
 /**

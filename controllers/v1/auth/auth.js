@@ -1,9 +1,3 @@
-const {
-  globalPermissionMaster,
-  roles,
-  globalRolePermissions,
-  users,
-} = require("../../../models");
 const { auth } = require("../../../services/v1");
 const { hashPassword } = require("../../../utils/hash");
 
