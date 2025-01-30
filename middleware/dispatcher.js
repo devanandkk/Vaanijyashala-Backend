@@ -19,14 +19,6 @@ const { OK, UNAUTHORIZED } = require("../helper/status-codes");
 
 const dispatcher = async (req, res, next, func, perm) => {
   try {
-    // if (perm) {
-    //   const checkPerm = await matchPermission(req, perm);
-    //   if (!checkPerm) throw new ErrorHandler(UNAUTHORIZED, "Not permitted");
-    // }
-    // if (req.user && req.user.userId) {
-    //   const user = await users.findOne({ _id: req.user.userId });
-    //   req.user.tenantId = user.tenantId;
-    // }
     const data = await func(req, res, next);
     if (data) {
       return res
