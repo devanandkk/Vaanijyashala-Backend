@@ -16,7 +16,7 @@ const login = async (req) => {
       googleAuth = false,
     } = req.body;
     let user;
-    return { success: true };
+    return { success: true, message: "Login Successfull" };
   } catch (error) {
     throwError(error);
   }
