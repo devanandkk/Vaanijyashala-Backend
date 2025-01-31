@@ -22,13 +22,6 @@ const login = async (req) => {
   }
 };
 
-const register = async (req) => {
-  try {
-    return { message: "Register successfull." };
-  } catch (error) {
-    throwError(error);
-  }
-};
 module.exports = {
   login,
 };
